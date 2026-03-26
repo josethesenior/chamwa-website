@@ -1,10 +1,10 @@
-let slides = document.querySelectorAll(".slide");
-let index = 0;
+let slides = document.querySelectorAll(".hero-slider img");
+let current = 0;
 
-function showSlides() {
-    slides.forEach(slide => slide.classList.remove("active"));
-    index = (index + 1) % slides.length;
-    slides[index].classList.add("active");
+function changeSlide() {
+    slides[current].classList.remove("active");
+    current = (current + 1) % slides.length;
+    slides[current].classList.add("active");
 }
 
-setInterval(showSlides, 3000);
+setInterval(changeSlide, 3000);

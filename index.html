@@ -8,8 +8,12 @@
 </head>
 <body>
 
-<header>
-    <h1>Chamwa Quality Millers Ltd</h1>
+<header class="header">
+    <div class="logo-container">
+        <img src="images/chamwalogo.png" alt="Logo" class="logo">
+        <h1>Chamwa Quality Millers Ltd</h1>
+    </div> 
+
     <nav>
         <a href="index.html">Home</a>
         <a href="about.html">About</a>
@@ -18,9 +22,19 @@
     </nav>
 </header>
 
-<section class="hero">
-    <h2>High-Quality Fortified Maize Flour</h2>
-    <p>Affordable, safe, and locally sourced from Nakuru County.</p>
+<!-- IMAGE SLIDER -->
+<section class="hero-slider">
+    <div class="slides">
+        <img src="images/frontchamwa.png" class="slide active">
+        <img src="images/machine.png" class="slide">
+        <img src="images/machine2.png" class="slide">
+    </div>
+
+    <div class=""hero-overlay">
+        <h2>High-Quality Fortified Maize Flour</h2>
+        <p>Affordable, safe, and locally sourced from Nakuru County.</p>
+    </div>
+    
 </section>
 
 <section>
@@ -43,9 +57,33 @@
     </p>
 </section>
 
+<!-- PRODUCT SLIDER -->
+<section class="product-section">
+    <h2>Our Products</h2>
+
+    <div class="product-slider">
+        <div class="product">1kg Flour</div>
+        <div class="product">2kg Flour</div>
+        <div class="product">12kg Bale</div>
+        <div class="product">Animal Feed</div>
+    </div>
+
+    <a href="products.html" class="btn">Discover More</a>
+</section>
+
+<!-- MAP -->
+<section>
+    <h2>Our Location</h2>
+    <iframe 
+        src="https://www.google.com/maps?q=Nakuru%20Pipeline&output=embed"
+        width="100%" height="300" style="border:0;">
+    </iframe>
+</section>
+
 <footer>
     <p>© 2026 Chamwa Quality Millers Ltd</p>
 </footer>
 
+<script src="js/script.js"></script>
 </body>
 </html>

@@ -68,45 +68,72 @@ h2 {
 /* HERO SLIDER */
 .hero-slider {
     position: relative;
-    height: 60vh; /* takes 80% of screen height */
-    min-height: 500px; /* ensures good size on small screens */
+    height: 85vh;
+    min-height: 550px;
 }
+
 /* IMAGES */
 .hero-slider img {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
     top: 0;
     left: 0;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
 
     opacity: 0;
     transition: opacity 1s ease-in-out;
+
+    z-index: 1;
 }
 
-/* ACTIVE IMAGE */
 .hero-slider img.active {
     opacity: 1;
 }
 
-/* TEXT OVERLAY */
+/* GRADIENT OVERLAY (MIDDLE LAYER) */
+.hero-slider::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.3)
+    );
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* TEXT (TOP LAYER) */
 .hero-overlay {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 
-    z-index: 999; /* FORCE ABOVE EVERYTHING */
-    
+    z-index: 5; /* ABOVE gradient */
     color: white;
     text-align: center;
 
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px 30px;
-    border-radius: 10px;
+    width: 80%;
 }
 
+.hero-overlay h2 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+}
+
+.hero-overlay p {
+    font-size: 1.3rem;
+}
 nav a {
     color: #ffeb3b;
     margin: 10px;
@@ -114,24 +141,6 @@ nav a {
 }
 nav a:hover {
     color: white;
-}
-
-/* IMAGE SLIDER */
-.slider {
-    position: relative;
-    height: 300px;
-    overflow: hidden;
-}
-
-.slide {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-    display: none;
-}
-
-.slide.active {
-    display: block;
 }
 
 /* SECTIONS */

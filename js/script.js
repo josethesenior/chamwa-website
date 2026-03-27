@@ -36,20 +36,29 @@ function autoSlide() {
     showSlide(next);
 }
 
-setInterval(autoSlide, 4000);
+let interval = setInterval(autoSlide, 4000);
+
+/* Pause on interaction */
+function resetInterval() {
+    clearInterval(interval);
+    interval = setInterval(autoSlide, 4000);
+}
 
 /* BUTTONS */
 document.querySelector(".next").onclick = () => {
     let next = (current + 1) % slides.length;
     showSlide(next);
+    resetInterval();
 };
 
 document.querySelector(".prev").onclick = () => {
     let prev = (current - 1 + slides.length) % slides.length;
     showSlide(prev);
+    resetInterval();
 };
 
 /* DOT CLICK */
 function goToSlide(index) {
     showSlide(index);
+    resetInterval();
 }

@@ -14,8 +14,9 @@ body {
     padding: 10px 20px;
 }
 .header {
-    position: relative;
-    z-index: 1000; /* 🔥 ensures header is always on top */
+    position: sticky;
+    top: 0;
+    z-index: 999;
 }
 
 h2 {
@@ -77,6 +78,7 @@ h2 {
     position: relative;
     height: 85vh;
     min-height: 550px;
+    z-index: 1;
 }
 
 /* IMAGES */
@@ -93,6 +95,7 @@ h2 {
     transition: opacity 1s ease-in-out;
 
     z-index: 1;
+    pointer-events: none;
 }
 
 .hero-slider img.active {
@@ -284,6 +287,8 @@ section ul {
 /* HAMBURGER */
 .menu-toggle {
     display: none;
+    position: relative;
+    z-index: 10000;
     font-size: 28px;
     cursor: pointer;
     color: #ffeb3b;

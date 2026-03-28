@@ -17,50 +17,57 @@ const messages = [
     }
 ];
 
-function showSlide(index) {
-    slides.forEach(s => s.classList.remove("active"));
-    dots.forEach(d => d.classList.remove("active"));
+// ✅ ONLY run slider if elements exist
+if (slides.length > 1 && dots.length > 0) {
 
-    slides[index].classList.add("active");
-    dots[index].classList.add("active");
+    function showSlide(index) {
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
 
-    document.getElementById("hero-title").textContent = messages[index].title;
-    document.getElementById("hero-text").textContent = messages[index].text;
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
 
-    current = index;
-}
+        document.getElementById("hero-title").textContent = messages[index].title;
+        document.getElementById("hero-text").textContent = messages[index].text;
 
-/* AUTO SLIDE */
-function autoSlide() {
-    let next = (current + 1) % slides.length;
-    showSlide(next);
-}
+        current = index;
+    }
 
-let interval = setInterval(autoSlide, 4000);
+    function autoSlide() {
+        let next = (current + 1) % slides.length;
+        showSlide(next);
+    }
 
-/* Pause on interaction */
-function resetInterval() {
-    clearInterval(interval);
-    interval = setInterval(autoSlide, 4000);
-}
+    let interval = setInterval(autoSlide, 4000);
 
-/* BUTTONS */
-document.querySelector(".next").onclick = () => {
-    let next = (current + 1) % slides.length;
-    showSlide(next);
-    resetInterval();
-};
+    function resetInterval() {
+        clearInterval(interval);
+        interval = setInterval(autoSlide, 4000);
+    }
 
-document.querySelector(".prev").onclick = () => {
-    let prev = (current - 1 + slides.length) % slides.length;
-    showSlide(prev);
-    resetInterval();
-};
+    let nextBtn = document.querySelector(".next");
+    let prevBtn = document.querySelector(".prev");
 
-/* DOT CLICK */
-function goToSlide(index) {
-    showSlide(index);
-    resetInterval();
+    if (nextBtn) {
+        nextBtn.onclick = () => {
+            let next = (current + 1) % slides.length;
+            showSlide(next);
+            resetInterval();
+        };
+    }
+
+    if (prevBtn) {
+        prevBtn.onclick = () => {
+            let prev = (current - 1 + slides.length) % slides.length;
+            showSlide(prev);
+            resetInterval();
+        };
+    }
+
+    window.goToSlide = function(index) {
+        showSlide(index);
+        resetInterval();
+    };
 }
 const menuToggle = document.getElementById("menu-toggle");
 const navMenu = document.getElementById("nav-menu");

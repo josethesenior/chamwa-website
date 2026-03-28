@@ -13,12 +13,19 @@ body {
     color: white;
     padding: 10px 20px;
 }
+.header {
+    position: relative;
+    z-index: 1000; /* 🔥 ensures header is always on top */
+}
+
 h2 {
     color: #1b5e20;
 }
 .logo-container {
     display: flex;
     align-items: center;
+    flex: 1; 
+    max-width: 80%;
 }
 
 .logo {
@@ -264,3 +271,66 @@ section {
     margin-top: 20px;
     color: #aaa;
 }
+
+section p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+section ul {
+    line-height: 1.6;
+}
+
+/* HAMBURGER */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: #ffeb3b;
+
+    margin-left: auto;
+    flex-shrink: 0;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+
+    .menu-toggle {
+        display: block;
+    }
+
+    nav {
+        position: absolute;
+        top: 100%; /* 🔥 attach directly below header */
+        right: 0;
+        left: 0;   /* 🔥 makes it full width */
+
+        background: #1b5e20;
+
+        display: none;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav a {
+        display: block;
+        padding: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.2);
+    }
+
+    nav.show {
+        display: flex;
+    }
+    .logo-container h1 {
+        font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+nav {
+    z-index: 1001;
+}
+.logo-container h1 {
+        font-size: 16px;
+    }

@@ -1,4 +1,156 @@
-<h2>Contact Us</h2>
-<p>P.O Box 1993-20100, Nakuru</p>
-<p>Phone: +254 722 283 852</p>
-<p>Email: chamwamillers@gmail.com</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chamwa Quality Millers</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<header class="header">
+    <div class="logo-container">
+        <img src="images/chamwalogo.png" alt="Logo" class="logo">
+        <h1>Chamwa Quality Millers</h1>
+    </div> 
+
+    <!-- HAMBURGER -->
+    <div class="menu-toggle" id="menu-toggle">
+        ☰
+    </div>
+
+    <nav id="nav-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="products.html">Products</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- IMAGE SLIDER -->
+<section class="hero-slider">
+    <img src="images/frontchamwa.png" class="slide active">
+    <img src="images/machine.jpeg" class="slide">
+    <img src="images/machine2.jpeg" class="slide">
+    
+    <div class="hero-overlay">
+        <h2 id="hero-title">Welcome To The Best Millers</h2>
+        <p id="hero-text">Affordable, safe, and high quality maize flour</p>
+    </div>
+
+    <!-- ARROWS -->
+    <button class="prev">&#10094;</button>
+    <button class="next">&#10095;</button>
+
+    <!-- DOTS -->
+    <div class="dots">
+        <span class="dot active" onclick="goToSlide(0)"></span>
+        <span class="dot" onclick="goToSlide(1)"></span>
+        <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+    
+</section>
+
+<section>
+    <h2>Who We Are</h2>
+    <p>
+        Established in 2022, Chamwa Quality Millers Limited takes pride in milling high-quality maize, the sale of fortified maize flour,
+        and the sale by-products after milling to animal feed manufacturers.
+        The company markets its fortified flour through the Chamwa brand. 
+    </p>
+</section>
+
+<section class="mission-vision">
+    <div class="mission">
+        <h2>Our Mission</h2>
+        <p>
+            To produce fortified maize flour at affordable prices while supporting local farmers.
+        </p>
+    </div>
+
+    <div class="vision">
+        <h2>Our Vision</h2>
+        <p>
+            To deliver high-quality maize flour and drive economic growth for small-scale farmers.
+        </p>
+    </div>
+</section>
+
+<!-- PRODUCT SLIDER -->
+<section class="product-section">
+    <h2>Our Products</h2>
+
+    <div class="product-slider">
+
+        <div class="product-card">
+            <img src="images/1kg.jpeg" alt="1kg Flour">
+            <p>1kg Pack</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/2kg.jpeg" alt="2kg Flour">
+            <p>2kg Pack</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/5kg.jpeg" alt="12kg Bale">
+            <p>5kg Pack</p>
+        </div>
+
+        <div class="product-card">
+            <img src="images/10kgimg.jpeg" alt="Animal Feed">
+            <p>10kg Pack</p>
+        </div>
+
+    </div>
+
+    <a href="products.html" class="btn">Discover More</a>
+</section>
+
+<!-- MAP -->
+<section>
+    <h2>Our Location</h2>
+    <iframe 
+        src="https://www.google.com/maps?q=-0.3553828,36.1527394,&z=17&output=embed"
+        width="100%" 
+        height="300" 
+        style="border:0;">
+    </iframe>
+
+    <a href="https://www.google.com/maps?q=-0.3553828,36.1527394" target="_blank" class="btn">
+    Get Directions
+</a>
+
+</section>
+
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div>
+            <h3>Chamwa Quality Millers</h3>
+            <p>P.O Box 1993-20100, Nakuru</p>
+            <p>+254 722 283 852</p>
+            <p>chamwamillers@gmail.com</p>
+        </div>
+
+        <div>
+            <h4>Quick Links</h4>
+            <a href="index.html">Home</a><br>
+            <a href="about.html">About</a><br>
+            <a href="products.html">Products</a><br>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div>
+            <h4>Get in Touch</h4>
+            <a href="contact.html" class="btn">Any Enquiries?</a>
+        </div>
+
+    </div>
+
+    <p class="footer-bottom">© 2026 Chamwa Quality Millers Ltd</p>
+</footer>
+<script src="js/script.js"></script>
+</body>
+</html>
